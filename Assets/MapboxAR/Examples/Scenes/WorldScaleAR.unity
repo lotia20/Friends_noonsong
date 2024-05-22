@@ -1010,6 +1010,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkText: {fileID: 1324529513}
   scanObject: {fileID: 0}
+  isAction: 0
+  talkPanel: {fileID: 0}
 --- !u!21 &902465329
 Material:
   serializedVersion: 8
@@ -1372,7 +1374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114793276287641354, guid: 35e76f6e52f5c4252a0b703cc2019a37, type: 3}
       propertyPath: _previewOptions.isPreviewEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114793276287641354, guid: 35e76f6e52f5c4252a0b703cc2019a37, type: 3}
       propertyPath: _options.extentOptions.extentType

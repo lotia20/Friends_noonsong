@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Text talkText;
     public GameObject scanObject;
     public bool isAction;
+    public GameObject talkPanel;
     
     public void Action(GameObject scanObj)
     {
