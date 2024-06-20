@@ -34,7 +34,7 @@ public class TutorialManager : MonoBehaviour
             StartDialogue(new string[] {
                 "숙명여대에 갓 입학한 새송이는 학교 탐방을 오게 되었다!",
                 "그런데 어쩌지? \n 학교가 너무 복잡해!",
-                "학교가 처음이라 막막하네..",
+                "[학교가 처음이라 막막하네..]",
                 "안녕 친구야! \n 혹시 무슨 고민 있어?"
             });
         }
