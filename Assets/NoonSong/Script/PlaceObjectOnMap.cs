@@ -46,10 +46,10 @@ public class PlaceObjectOnMap : MonoBehaviour
 
     private void TriggerDialogue()
     {
-        if (!gameManager.isAction)
-        {
-            gameManager.Talk(0, true); // 초기 대화 시작
-            dialogueTriggered = true;
-        }
+        // if (!gameManager.isAction)
+        // {
+        //     gameManager.Talk(0, true); // 초기 대화 시작
+        //     dialogueTriggered = true;
+        // }
     }
 }
