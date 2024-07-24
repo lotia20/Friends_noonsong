@@ -47,3 +47,6 @@ TagManager:
   - name: 2
     uniqueID: 158898885
     locked: 0
+  - name: ARObjects
+    uniqueID: 3398515513
+    locked: 0
