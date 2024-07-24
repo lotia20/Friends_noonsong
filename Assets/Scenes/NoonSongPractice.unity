@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1287134526}
   portraitImage: {fileID: 808702720}
-  panelId: 2
+  panelId: 0
   animator: {fileID: 846003935}
 --- !u!95 &846003935
 Animator:
@@ -3397,7 +3397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 164170908}
   portraitImage: {fileID: 782047512}
-  panelId: 5
+  panelId: 0
   animator: {fileID: 1469596304}
 --- !u!95 &1469596304
 Animator:
@@ -3492,7 +3492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 2011829037}
   portraitImage: {fileID: 1866117695}
-  panelId: 6
+  panelId: 0
   animator: {fileID: 1479488084}
 --- !u!95 &1479488084
 Animator:
@@ -3682,7 +3682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1336000695}
   portraitImage: {fileID: 248356908}
-  panelId: 4
+  panelId: 0
   animator: {fileID: 1539699906}
 --- !u!95 &1539699906
 Animator:
@@ -3800,7 +3800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1594125948}
   portraitImage: {fileID: 518107517}
-  panelId: 3
+  panelId: 0
   animator: {fileID: 1565192136}
 --- !u!95 &1565192136
 Animator:
@@ -5040,7 +5040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1800191715}
   portraitImage: {fileID: 362073128}
-  panelId: 1
+  panelId: 0
   animator: {fileID: 2058097796}
 --- !u!95 &2058097796
 Animator:
@@ -5365,7 +5365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1334194479981699309
 Transform:
   m_ObjectHideFlags: 0
