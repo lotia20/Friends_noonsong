@@ -723,10 +723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe6df994ed3e74db390f95f0711168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  nextButton: {fileID: 0}
-  talkPanelMove: {fileID: 0}
+  dialoguePanel: {fileID: 482720438}
+  dialogueText: {fileID: 116907136}
+  nextButton: {fileID: 225119490}
+  talkPanelMove: {fileID: 482720442}
 --- !u!4 &178379972
 Transform:
   m_ObjectHideFlags: 0
@@ -2556,12 +2556,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitArr:
   - {fileID: 21300000, guid: 23cef92e9ebdcba4ea45e3457e947d46, type: 3}
-  - {fileID: 21300000, guid: 9089b65ef4dbed2479ba4b0361a7b38f, type: 3}
-  - {fileID: 21300000, guid: b091a580574cdd345acddd43d824c6ac, type: 3}
-  - {fileID: 21300000, guid: c76deb1a87f653c47816d3d3994fa5d4, type: 3}
-  - {fileID: 21300000, guid: b59b788a9d6248c46a1d843e8705607f, type: 3}
-  - {fileID: 21300000, guid: bd208c96a95e9db49961afe42d512c23, type: 3}
-  - {fileID: 21300000, guid: 83247bf8c0e22744fb6a62a7e7382103, type: 3}
+  - {fileID: 21300000, guid: 662d31aaa2247b2489c3648846724ff6, type: 3}
+  - {fileID: 21300000, guid: e1b9d6add716ae24f9366d87fdc82b83, type: 3}
+  - {fileID: 21300000, guid: 102b027da218d674ca04fae0f6b5c0d0, type: 3}
+  - {fileID: 21300000, guid: c37d615668940194c85249ff938ea523, type: 3}
+  - {fileID: 21300000, guid: 3d482350eb7ff7f4ba1e1ea29b77773e, type: 3}
+  - {fileID: 21300000, guid: 024fd7b9c76a3014ebef57bf655ccac4, type: 3}
+  - {fileID: 21300000, guid: e1b9d6add716ae24f9366d87fdc82b83, type: 3}
 --- !u!1 &1191595331
 GameObject:
   m_ObjectHideFlags: 0
