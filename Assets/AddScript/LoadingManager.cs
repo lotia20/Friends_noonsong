@@ -4,9 +4,9 @@ using System.Collections;
 
 public class LoadingManager : MonoBehaviour
 {
-    public GameObject loadingPanel; // ·Îµù È­¸é ÆĞ³Î
-    public float loadingDuration = 3f; // ·Îµù È­¸é Ç¥½Ã ½Ã°£
-    public GameObject studentCard; // ¹Ì¹¦ÇÑ ÇĞ»ıÁõ ¿ÀºêÁ§Æ®
+    public GameObject loadingPanel; // ë¡œë”© í™”ë©´ íŒ¨ë„
+    public float loadingDuration = 3f; // ë¡œë”© í™”ë©´ í‘œì‹œ ì‹œê°„
+    public GameObject studentCard; // ë¯¸ë¬˜í•œ í•™ìƒì¦ ì˜¤ë¸Œì íŠ¸
 
     void Start()
     {
@@ -15,24 +15,24 @@ public class LoadingManager : MonoBehaviour
 
     IEnumerator ShowLoadingScreen()
     {
-        // ·Îµù È­¸é Ç¥½Ã
+        // ë¡œë”© í™”ë©´ í‘œì‹œ
         loadingPanel.SetActive(true);
         studentCard.SetActive(false);
 
-        // ÁöÁ¤µÈ ½Ã°£ µ¿¾È ·Îµù È­¸é À¯Áö
+        // ì§€ì •ëœ ì‹œê°„ ë™ì•ˆ ë¡œë”© í™”ë©´ ìœ ì§€
         yield return new WaitForSeconds(loadingDuration);
 
-        // ·Îµù È­¸é ¼û±â°í ÇĞ»ıÁõ µîÀå
+        // ë¡œë”© í™”ë©´ ìˆ¨ê¸°ê³  í•™ìƒì¦ ë“±ì¥
         loadingPanel.SetActive(false);
         studentCard.SetActive(true);
 
-        // ÇĞ»ıÁõ µîÀå ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÀÛ
+        // í•™ìƒì¦ ë“±ì¥ ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
         StartCoroutine(ShowStudentCard());
     }
 
     IEnumerator ShowStudentCard()
     {
-        // ÇĞ»ıÁõ µîÀå ¾Ö´Ï¸ŞÀÌ¼Ç ·ÎÁ÷ (¿¹: À§Ä¡ ÀÌµ¿)
+        // í•™ìƒì¦ ë“±ì¥ ì• ë‹ˆë©”ì´ì…˜ ë¡œì§ (ì˜ˆ: ìœ„ì¹˜ ì´ë™)
         Vector3 startPosition = new Vector3(0, -5, 0);
         Vector3 endPosition = Vector3.zero;
         float animationDuration = 2f;
