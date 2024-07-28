@@ -20,9 +20,13 @@ public class TalkManager : MonoBehaviour
     {
         // 대사 데이터 추가
         talkData.Add(0, new string[] {
-            "숙명여대에 갓 입학한 새송이는 학교 탐방을 오게 되었다!:0",
-            "근데 어쩌지? 학교가 너무 복잡해!:0",
-            "[학교가 처음이라 막막하네...]:0",
+            "숙명여대에 갓 입학한 새송이는 학교 탐방을 오게 되었다!:0", // 나레이션
+            "근데 어쩌지? 학교가 너무 복잡해!:0", // 나레이션
+            "[학교가 처음이라 막막하네...]:0", // 유저 버튼 클릭
+
+            // 사용자가 버튼 클릭하면
+            // 눈덩이 활성화
+
             "안녕, 친구야! 혹시 무슨 고민 있어?:1",
             "[(사정을 설명한다.)]:0",
             "아하, 아직 학교가 처음이라 모르는게 많다고? 음...어디보자~:1",
@@ -96,7 +100,7 @@ public class TalkManager : MonoBehaviour
         });
 
         // 초상화 데이터 추가
-        portraitData.Add(0 + 0, portraitArr[0]); //유조
+        portraitData.Add(0 + 0, portraitArr[0]); //유저
         portraitData.Add(0 + 1, portraitArr[1]); //눈덩이
         portraitData.Add(1000 + 0, portraitArr[2]); //눈꽃송이
         portraitData.Add(2000 + 0, portraitArr[3]); //로로
