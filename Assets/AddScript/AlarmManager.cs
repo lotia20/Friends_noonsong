@@ -3,33 +3,33 @@ using UnityEngine.UI;
 
 public class AlarmManager : MonoBehaviour
 {
-    public GameObject alarmPanel; // ¾Ë¶÷ ÆĞ³Î
-    public Button alarmButton; // ¾Ë¶÷ ¹öÆ°
-    public Button closeButton; // ´İ±â ¹öÆ°
-    public Text alarmText; // ¾Ë¶÷ ÅØ½ºÆ®
+    public GameObject alarmPanel; // ì•ŒëŒ íŒ¨ë„
+    public Button alarmButton; // ì•ŒëŒ ë²„íŠ¼
+    public Button closeButton; // ë‹«ê¸° ë²„íŠ¼
+    public Text alarmText; // ì•ŒëŒ í…ìŠ¤íŠ¸
 
     void Start()
     {
-        // ÃÊ±â »óÅÂ¿¡¼­ ¾Ë¶÷ ÆĞ³Î ºñÈ°¼ºÈ­
+        // ì´ˆê¸° ìƒíƒœì—ì„œ ì•ŒëŒ íŒ¨ë„ ë¹„í™œì„±í™”
         alarmPanel.SetActive(false);
 
-        // ¹öÆ° Å¬¸¯ ÀÌº¥Æ® ¸®½º³Ê Ãß°¡
+        // ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì¶”ê°€
         alarmButton.onClick.AddListener(ShowAlarm);
         closeButton.onClick.AddListener(CloseAlarm);
     }
 
     void ShowAlarm()
     {
-        // ¾Ë¶÷ ¸Ş½ÃÁö ¼³Á¤ (¿øÇÏ´Â ¸Ş½ÃÁö·Î º¯°æ °¡´É)
+        // ì•ŒëŒ ë©”ì‹œì§€ ì„¤ì • (ì›í•˜ëŠ” ë©”ì‹œì§€ë¡œ ë³€ê²½ ê°€ëŠ¥)
         alarmText.text = "This is an alarm message!";
 
-        // ¾Ë¶÷ ÆĞ³Î È°¼ºÈ­
+        // ì•ŒëŒ íŒ¨ë„ í™œì„±í™”
         alarmPanel.SetActive(true);
     }
 
     void CloseAlarm()
     {
-        // ¾Ë¶÷ ÆĞ³Î ºñÈ°¼ºÈ­
+        // ì•ŒëŒ íŒ¨ë„ ë¹„í™œì„±í™”
         alarmPanel.SetActive(false);
     }
 }

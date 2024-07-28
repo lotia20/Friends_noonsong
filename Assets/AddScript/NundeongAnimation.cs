@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class NundeongAnimation : MonoBehaviour
 {
-    public Transform nundeong; // ´«µ¢ÀÌ Transform
-    public Transform arCamera; // AR Ä«¸Ş¶ó Transform
-    public float moveDuration = 2f; // ÀÌµ¿ ¾Ö´Ï¸ŞÀÌ¼Ç Áö¼Ó ½Ã°£
-    public float floatAmplitude = 0.1f; // ¶°ÀÖ´Â ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ ÁøÆø
-    public float floatFrequency = 1f; // ¶°ÀÖ´Â ¾Ö´Ï¸ŞÀÌ¼ÇÀÇ ÁÖ±â
+    public Transform nundeong; // ëˆˆë©ì´ Transform
+    public Transform arCamera; // AR ì¹´ë©”ë¼ Transform
+    public float moveDuration = 2f; // ì´ë™ ì• ë‹ˆë©”ì´ì…˜ ì§€ì† ì‹œê°„
+    public float floatAmplitude = 0.1f; // ë– ìˆëŠ” ì• ë‹ˆë©”ì´ì…˜ì˜ ì§„í­
+    public float floatFrequency = 1f; // ë– ìˆëŠ” ì• ë‹ˆë©”ì´ì…˜ì˜ ì£¼ê¸°
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -16,18 +16,18 @@ public class NundeongAnimation : MonoBehaviour
 
     void Start()
     {
-        // ½ÃÀÛ À§Ä¡¿Í ³¡ À§Ä¡ ¼³Á¤
-        startPos = arCamera.TransformPoint(new Vector3(-1.5f, 1.5f, 5f)); // AR Ä«¸Ş¶óÀÇ ÁÂÃø »ó´Ü (È­¸é ÁÂÇ¥°è)
-        endPos = arCamera.TransformPoint(new Vector3(0f, 0f, 2f)); // AR Ä«¸Ş¶óÀÇ Á¤¸é (È­¸é Áß¾Ó)
+        // ì‹œì‘ ìœ„ì¹˜ì™€ ë ìœ„ì¹˜ ì„¤ì •
+        startPos = arCamera.TransformPoint(new Vector3(-1.5f, 1.5f, 5f)); // AR ì¹´ë©”ë¼ì˜ ì¢Œì¸¡ ìƒë‹¨ (í™”ë©´ ì¢Œí‘œê³„)
+        endPos = arCamera.TransformPoint(new Vector3(0f, 0f, 2f)); // AR ì¹´ë©”ë¼ì˜ ì •ë©´ (í™”ë©´ ì¤‘ì•™)
 
-        //À§Ä¡¸¦ ´õ Á¶Á¤ÇÏ°í ½Í´Ù¸é x, y, z °ªÀ» º¯°æÇÏ¿© ¿øÇÏ´Â À§Ä¡¸¦ ¼³Á¤
-        //½ÃÀÛ À§Ä¡¸¦ ´õ ¿ŞÂÊ À§·Î ÀÌµ¿½ÃÅ°°í ½Í´Ù¸é x °ªÀ» ´õ ÀÛ°Ô ÇÏ°í, y °ªÀ» ´õ Å©°Ô ¼³Á¤
-        //µµÂø À§Ä¡¸¦ ´õ Áß¾Ó¿¡ ¸ÂÃß°í ½Í´Ù¸é x¿Í y °ªÀ» 0¿¡ °¡±õ°Ô ¼³Á¤ÇÏ¸é µÊ.
+        //ìœ„ì¹˜ë¥¼ ë” ì¡°ì •í•˜ê³  ì‹¶ë‹¤ë©´ x, y, z ê°’ì„ ë³€ê²½í•˜ì—¬ ì›í•˜ëŠ” ìœ„ì¹˜ë¥¼ ì„¤ì •
+        //ì‹œì‘ ìœ„ì¹˜ë¥¼ ë” ì™¼ìª½ ìœ„ë¡œ ì´ë™ì‹œí‚¤ê³  ì‹¶ë‹¤ë©´ x ê°’ì„ ë” ì‘ê²Œ í•˜ê³ , y ê°’ì„ ë” í¬ê²Œ ì„¤ì •
+        //ë„ì°© ìœ„ì¹˜ë¥¼ ë” ì¤‘ì•™ì— ë§ì¶”ê³  ì‹¶ë‹¤ë©´ xì™€ y ê°’ì„ 0ì— ê°€ê¹ê²Œ ì„¤ì •í•˜ë©´ ë¨.
 
-        // ´«µ¢ÀÌ ÃÊ±â À§Ä¡ ¼³Á¤
+        // ëˆˆë©ì´ ì´ˆê¸° ìœ„ì¹˜ ì„¤ì •
         nundeong.position = startPos;
 
-        // ¾Ö´Ï¸ŞÀÌ¼Ç ½ÃÀÛ
+        // ì• ë‹ˆë©”ì´ì…˜ ì‹œì‘
         isMoving = true;
     }
 
@@ -43,12 +43,12 @@ public class NundeongAnimation : MonoBehaviour
             {
                 isMoving = false;
                 floatStartPos = nundeong.position;
-                elapsedTime = 0f; // ¶°ÀÖ´Â ¾Ö´Ï¸ŞÀÌ¼ÇÀ» À§ÇÑ ½Ã°£ ÃÊ±âÈ­
+                elapsedTime = 0f; // ë– ìˆëŠ” ì• ë‹ˆë©”ì´ì…˜ì„ ìœ„í•œ ì‹œê°„ ì´ˆê¸°í™”
             }
         }
         else
         {
-            // µÕ½ÇµÕ½Ç ¶°ÀÖ´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+            // ë‘¥ì‹¤ë‘¥ì‹¤ ë– ìˆëŠ” ì• ë‹ˆë©”ì´ì…˜
             float yOffset = floatAmplitude * Mathf.Sin(floatFrequency * elapsedTime * Mathf.PI * 2);
             nundeong.position = floatStartPos + new Vector3(0, yOffset, 0);
             elapsedTime += Time.deltaTime;
