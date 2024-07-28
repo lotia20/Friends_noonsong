@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
             isShowingDialogue = true; // 대화창 표시 중으로 설정
             TalkPanel talkPanel = dialogues[currentPanelIndex].GetComponent<TalkPanel>();
             talkPanel.ShowDialogue();
+            Debug.Log("After Show Dialogue currentPanelIndex: " + currentPanelIndex);
             currentPanelIndex++;
         }
     }
