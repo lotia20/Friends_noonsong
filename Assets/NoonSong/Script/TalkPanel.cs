@@ -14,7 +14,7 @@ public class TalkPanel : MonoBehaviour
     private TalkManager talkManager;
     private bool dialogueEnded = false;
 
-    void Start()
+    void Awake()
     {
         talkManager = FindObjectOfType<TalkManager>();
     }
@@ -77,6 +77,6 @@ public class TalkPanel : MonoBehaviour
     public void OnHideAnimationEnd()
     {
         gameObject.SetActive(false);
-        FindObjectOfType<GameManager>().OnDialogueHidden(panelId);
+        FindObjectOfType<GameManager>().OnDialogueHidden(panelId); // GameManager에 패널 ID 전달
     }
 }

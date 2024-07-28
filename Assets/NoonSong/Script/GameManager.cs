@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] dialogues; // 대화창을 배열로 관리
     private int currentPanelIndex = 0; // 현재 대화창 인덱스
+    public bool isShowingDialogue = false; // 대화창 표시 중인지 여부
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 3; i++) // 초기 3개 대화창 표시
         {
             ShowNextDialogue();
-            yield return new WaitUntil(() => !dialogues[i].activeSelf);
+            yield return new WaitUntil(() => !isShowingDialogue); // 대화창이 숨겨질 때까지 대기
         }
     }
 
@@ -40,8 +41,9 @@ public class GameManager : MonoBehaviour
     // 다음 대화창을 표시하는 메소드
     public void ShowNextDialogue()
     {
-        if (currentPanelIndex < dialogues.Length)
+        if (currentPanelIndex < dialogues.Length && !isShowingDialogue)
         {
+            isShowingDialogue = true; // 대화창 표시 중으로 설정
             TalkPanel talkPanel = dialogues[currentPanelIndex].GetComponent<TalkPanel>();
             talkPanel.ShowDialogue();
             currentPanelIndex++;
@@ -53,77 +55,17 @@ public class GameManager : MonoBehaviour
     {
         if (panelId < 2)
         {
+            isShowingDialogue = false; // 대화창이 숨겨졌음을 표시
             ShowNextDialogue();
+        }
+        else
+        {
+            isShowingDialogue = false; // 대화창이 숨겨졌음을 표시
         }
     }
 }
 
 
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
-
-// public class GameManager : MonoBehaviour
-// {
-//     public GameObject[] dialogues; // 대화창을 배열로 관리
-
-//     void Start()
-//     {
-//         // 모든 대화창 비활성화
-//         foreach (GameObject dialogue in dialogues)
-//         {
-//             dialogue.SetActive(false);
-//         }
-//         StartCoroutine(ShowInitialDialogues());
-//     }
-
-//     // 초기 대화창 3개를 순차적으로 표시
-//     public IEnumerator ShowInitialDialogues()
-//     {
-//         for (int i = 0; i < 3; i++) // 초기 3개 대화창 표시
-//         {
-//             ShowNextDialogue();
-//             Debug.Log("ShowInitialDialogues");
-//             yield return new WaitUntil(() => dialogues[i].activeSelf == false);
-//         }
-//     }
-
-//     // 특정 위치에 도착했을 때 대화창을 표시
-//     public void ShowDialogueAtLocation(int locationIndex)
-//     {
-//         foreach (GameObject dialogue in dialogues)
-//         {
-//             TalkPanel talkPanel = dialogue.GetComponent<TalkPanel>();
-//             if (talkPanel.panelId == locationIndex)
-//             {
-//                 ShowNextDialogue();
-//                 break;
-//             }
-//         }
-//     }
-
-//     // 다음 대화창을 표시하는 메소드
-//     public void ShowNextDialogue()
-//     {
-//         foreach (GameObject dialogue in dialogues)
-//         {
-//             TalkPanel talkPanel = dialogue.GetComponent<TalkPanel>();
-//             if (!dialogue.activeSelf)
-//             {
-//                 talkPanel.ShowDialogue();
-//                 Debug.Log("panelIdforGM: " + talkPanel.panelId);
-//                 break;
-//             }
-//         }
-//     }
-
-//     // 대화가 끝난 후 호출되는 메소드
-//     public void OnDialogueHidden()
-//     {
-//         ShowNextDialogue();
-//     }
-// }
 
 
 // using System.Collections;
