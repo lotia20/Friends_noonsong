@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TalkManager : MonoBehaviour
 {
-    Dictionary<int, string[]> talkData; // 대사를 저장하는 Dictionary
-    Dictionary<int, Sprite> portraitData; // 초상화를 저장하는 Dictionary
+    Dictionary<int, string[]> talkData; // 대사 데이터를 저장하는 딕셔너리
+    Dictionary<int, Sprite> portraitData; // 초상화 데이터를 저장하는 딕셔너리
 
     public Sprite[] portraitArr; // Inspector에서 설정할 수 있는 초상화 배열
 
     void Awake()
     {
-        talkData = new Dictionary<int, string[]>();
-        portraitData = new Dictionary<int, Sprite>();
-        GenerateData();
+        talkData = new Dictionary<int, string[]>(); // 대사 데이터 초기화
+        portraitData = new Dictionary<int, Sprite>(); // 초상화 데이터 초기화
+        GenerateData(); // 대사 및 초상화 데이터 생성
     }
 
     void GenerateData()
@@ -74,7 +74,7 @@ public class TalkManager : MonoBehaviour
             "이 친구는 꽃송이야! 눈송이의 베프인 꽃송이라면 눈송이가 어디 있는지 알 지도 몰라!:2000",
             "눈송이? 너희 눈송이를 찾고 있니?:4001",
             "맞아요. 새송이가 눈송이와 친구가 되고 싶대요.:3000",
-            "그렇다면 정확히 찾아 왔어. 마침 방금 전까지 눈소이랑 함께 있떤 참이었거든.:4000",
+            "그렇다면 정확히 찾아 왔어. 마침 방금 전까지 눈소이랑 함께 있던 참이었거든.:4000",
             "아마 눈송이는 프라임관에 있을 거야! 어딘지 아니? 같이 가 줄게.:4001"
         });
 
@@ -100,45 +100,44 @@ public class TalkManager : MonoBehaviour
         });
 
         // 초상화 데이터 추가
-        portraitData.Add(0 + 0, portraitArr[0]); //유저
-        portraitData.Add(0 + 1, portraitArr[1]); //눈덩이
-        portraitData.Add(1000 + 0, portraitArr[2]); //눈꽃송이
-        portraitData.Add(2000 + 0, portraitArr[3]); //로로
-        portraitData.Add(2000 + 1, portraitArr[4]); //로로
-        portraitData.Add(3000 + 0, portraitArr[5]); //눈결이
-        portraitData.Add(3000 + 1, portraitArr[6]); //눈결이
-        portraitData.Add(3000 + 2, portraitArr[7]); //눈결이
-        portraitData.Add(4000 + 0, portraitArr[8]); //꽃송이
-        portraitData.Add(4000 + 1, portraitArr[9]); //꽃송이
-        portraitData.Add(5000 + 0, portraitArr[10]); //눈송이
-        portraitData.Add(5000 + 1, portraitArr[11]); //눈송이
-        portraitData.Add(5000 + 2, portraitArr[12]); //눈송이
-        portraitData.Add(5000 + 3, portraitArr[13]); //눈송이
-        portraitData.Add(6000 + 0, portraitArr[14]); //튜리
-
+        portraitData.Add(0 + 0, portraitArr[0]); // 유저 초상화
+        portraitData.Add(0 + 1, portraitArr[1]); // 눈덩이 초상화
+        portraitData.Add(1000 + 0, portraitArr[2]); // 눈꽃송이 초상화
+        portraitData.Add(2000 + 0, portraitArr[3]); // 로로 초상화
+        portraitData.Add(2000 + 1, portraitArr[4]); // 로로 초상화
+        portraitData.Add(3000 + 0, portraitArr[5]); // 눈결이 초상화
+        portraitData.Add(3000 + 1, portraitArr[6]); // 눈결이 초상화
+        portraitData.Add(3000 + 2, portraitArr[7]); // 눈결이 초상화
+        portraitData.Add(4000 + 0, portraitArr[8]); // 꽃송이 초상화
+        portraitData.Add(4000 + 1, portraitArr[9]); // 꽃송이 초상화
+        portraitData.Add(5000 + 0, portraitArr[10]); // 눈송이 초상화
+        portraitData.Add(5000 + 1, portraitArr[11]); // 눈송이 초상화
+        portraitData.Add(5000 + 2, portraitArr[12]); // 눈송이 초상화
+        portraitData.Add(5000 + 3, portraitArr[13]); // 눈송이 초상화
+        portraitData.Add(6000 + 0, portraitArr[14]); // 튜리 초상화
     }
 
-    // 특정 패널 ID의 대사 가져오기
+    // 특정 패널 ID의 대사를 가져오는 메소드
     public string GetTalk(int id, int talkIndex)
     {
         if (!talkData.ContainsKey(id))
         {
             if (!talkData.ContainsKey(id - id % 10))
-                return GetTalk(id - id % 100, talkIndex); //튜토리얼
+                return GetTalk(id - id % 100, talkIndex); // 튜토리얼 대사 반환
             else
-                return GetTalk(id - id % 10, talkIndex); //퀘스트
+                return GetTalk(id - id % 10, talkIndex); // 퀘스트 대사 반환
         }
         if (talkIndex >= talkData[id].Length)
         {
-            return null;
+            return null; // 대사 인덱스가 범위를 넘어설 경우 null 반환
         }
         else
         {
-            return talkData[id][talkIndex];
+            return talkData[id][talkIndex]; // 해당 대사 반환
         }
     }
 
-    // 특정 패널 ID의 초상화 가져오기
+    // 특정 패널 ID의 초상화를 가져오는 메소드
     public Sprite GetPortrait(int id, int portraitIndex)
     {
         int key = portraitIndex;
@@ -147,6 +146,6 @@ public class TalkManager : MonoBehaviour
             Debug.LogWarning($"Portrait data for key {key} not found. Returning default sprite.");
             return null; // 또는 기본값으로 사용할 스프라이트를 반환
         }
-        return portraitData[key];
+        return portraitData[key]; // 해당 초상화 반환
     }
 }
