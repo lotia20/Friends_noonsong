@@ -5,9 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/MapboxAR/Examples/Scenes/WorldScaleAR-ManualAlignment.unity
     guid: d9ff170f22f0545c3970a889a592f312
+  - enabled: 0
+    path: Assets/Scenes/NoonsongFriends.unity
+    guid: 070acacda95110e40a2c4182cc11e994
+  - enabled: 0
+    path: Assets/Scenes/CollectionScene.unity
+    guid: 2a4336ffb68d8284a8af8b474a75d00a
+  - enabled: 0
+    path: Assets/Scenes/New Scene.unity
+    guid: 65d73286714680a478226a439815c0a1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f5c5b7f53b6a91d449257712549f18e8, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6790528e3652b144cacacd786d7fa902, type: 2}
