@@ -117,21 +117,19 @@ public class TalkManager : MonoBehaviour
         portraitData.Add(6000 + 0, portraitArr[14]); // 튜리 초상화
     }
 
-    // 대사 데이터에서 인덱싱하여 대사 가져옴.
+    // 특정 패널 ID의 대사를 가져오는 메소드
     public string GetTalk(int id, int talkIndex)
     {
         if (!talkData.ContainsKey(id))
         {
-            int baseId = id - id % 10;
-            if (!talkData.ContainsKey(baseId))
-                return GetTalk(baseId - baseId % 10, talkIndex); // 튜토리얼 대사 반환
+            if (!talkData.ContainsKey(id - id % 10))
+                return GetTalk(id - id % 100, talkIndex); // 튜토리얼 대사 반환
             else
-                return GetTalk(baseId, talkIndex); // 퀘스트 대사 반환
+                return GetTalk(id - id % 10, talkIndex); // 퀘스트 대사 반환
         }
-
         if (talkIndex >= talkData[id].Length)
         {
-            return null;
+            return null; // 대사 인덱스가 범위를 넘어설 경우 null 반환
         }
         else
         {
